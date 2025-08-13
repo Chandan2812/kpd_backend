@@ -63,7 +63,7 @@ router.post("/verify-otp", async (req, res) => {
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
         <div style="text-align: center; padding: 20px;">
-          <img src="https://www.bigwigdigital.in/assets/bigwig%20digital%20logo%20(11)-T8_kDtlw.png" alt="Bigwig Media Logo" width="120" />
+          <img src="https://res.cloudinary.com/dqrlkbsdq/image/upload/v1755090981/logo_bohujn.png" alt="KPD Logo" width="120" />
         </div>
         <div style="padding: 20px; background-color: #f9f9f9; border-radius: 10px;">
           <h2 style="color: #333;">Hello ${data.name},</h2>
