@@ -6,7 +6,7 @@ const sendEmail = require("../utils/sendEmail");
 const otpMap = new Map();
 
 router.post("/send-otp", async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, message, purpose } = req.body;
 
   try {
     // 1️⃣ Check if email already exists in the database
@@ -23,7 +23,7 @@ router.post("/send-otp", async (req, res) => {
     // 3️⃣ Store OTP temporarily
     otpMap.set(email, {
       otp,
-      data: { name, email, phone, message },
+      data: { name, email, phone, message, purpose },
       time: Date.now(),
     });
 
@@ -93,6 +93,7 @@ router.post("/verify-otp", async (req, res) => {
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
       <p><strong>Phone:</strong> ${data.phone}</p>
+      <p><strong>Purpose:</strong> ${data.purpose}</p>
       <p><strong>Message:</strong><br /> ${data.message}</p>
     `,
   });
