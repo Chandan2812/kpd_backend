@@ -1,5 +1,5 @@
 const Sell = require("../models/sell.model");
-const Buy = require("../models/blog.model");
+const Buy = require("../models/property.model");
 
 exports.approveSell = async (req, res) => {
   try {
@@ -20,7 +20,6 @@ exports.approveSell = async (req, res) => {
       slug,
       description: sell.description,
       purpose: sell.purpose,
-      type: sell.type,
       location: sell.location,
       price: sell.price,
       bedrooms: sell.bedrooms,
